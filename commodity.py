@@ -1,6 +1,5 @@
 # !/usr/bin/env python
 import os
-import csv
 
 def main():
 	for files in  os.listdir("ra_csvs"):
