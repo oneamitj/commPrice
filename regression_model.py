@@ -54,9 +54,9 @@ def main(data):
 	x = data.dates
 	y = data.price
 
-	# a, b = linear_regression(x, y)# for linear regression uncomment this line
+	a, b = linear_regression(x, y)# for linear regression uncomment this line
 	# a, b, c = higher_regression(x, y, 2)# for quadratic regression uncomment this line
-	a, b, c, d = higher_regression(x, y, 3)# for cubic regression uncomment this line
+	# a, b, c, d = higher_regression(x, y, 3)# for cubic regression uncomment this line
 
 
 	print '\nRegression Model for price prediction of %s' % (str(data).replace("dataset.",''))
@@ -74,9 +74,9 @@ def main(data):
 
 	price = []
 	for date in dates:
-		# price_calc = a*date + b	# for linear regression uncomment this line
+		price_calc = a*date + b	# for linear regression uncomment this line
 		# price_calc = a + b*date + c*date*date	# for quadratic regression uncomment this line
-		price_calc = a + b*date + c*date*date + d*date*date*date # for cubic regression uncomment this line
+		# price_calc = a + b*date + c*date*date + d*date*date*date # for cubic regression uncomment this line
 		price.append(price_calc)
 
 
@@ -102,9 +102,9 @@ def main(data):
 
 		date_x = date2num(datetime.date(yr, mnt, day))
 
-		# price_x = a*date_x + b 	# for linear regression uncomment this line
+		price_x = a*date_x + b 	# for linear regression uncomment this line
 		# price_x = a + b*date + c*date*date	# for quadratic regression uncomment this line
-		price_x = a + b*date + c*date*date + d*date*date*date # for cubic regression uncomment this line
+		# price_x = a + b*date + c*date*date + d*date*date*date # for cubic regression uncomment this line
 
 		print "\nPredicted price of %s on %s is %f.\n" % (str(data).replace("dataset.",''), str(num2date(date_x))[:10], price_x)
 
